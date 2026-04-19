@@ -3,14 +3,50 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mohamed Jemshith — Full-Stack &amp; Fintech Developer</title>
-  <meta name="description" content="Full stack developer in Dubai — Python, Node.js, React, trading automation, MT4/MT5, APIs. GitHub @jemshithjemc. MBA. Open source across 55+ repositories." />
+  <meta name="theme-color" content="#0c0612" id="meta-theme-color" />
+  <script>
+    (function () {
+      try {
+        var k = "portfolio-theme";
+        var t = localStorage.getItem(k);
+        if (t !== "light" && t !== "dark") t = "dark";
+        document.documentElement.setAttribute("data-theme", t);
+        var meta = document.querySelector("#meta-theme-color");
+        if (meta) meta.setAttribute("content", t === "light" ? "#f3effb" : "#0c0612");
+      } catch (e) {
+        document.documentElement.setAttribute("data-theme", "dark");
+      }
+    })();
+  </script>
+  <script>
+    (function () {
+      try {
+        var mq = window.matchMedia.bind(window);
+        var lite =
+          mq("(max-width: 900px)").matches ||
+          mq("(pointer: coarse)").matches ||
+          (typeof navigator !== "undefined" &&
+            navigator.connection &&
+            navigator.connection.saveData === true);
+        try {
+          if (!lite && mq("(prefers-reduced-data: reduce)").matches) lite = true;
+        } catch (e2) {}
+        if (lite) document.documentElement.classList.add("perf-lite");
+      } catch (e) {}
+    })();
+  </script>
+  <title>Mohamed Jemshith — Head of Development, Logz | Full-Stack &amp; Fintech</title>
+  <meta name="description" content="Head of Development at Logz, based in Dubai. Full-stack and fintech: Python, Node.js, React, trading automation, MT4/MT5, APIs. GitHub @jemshithjemc. MBA. 55+ repository contributions." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com" />
+  <link rel="preload" href="img/profile.jpg" as="image" fetchpriority="high" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Plus+Jakarta+Sans:wght@600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <link rel="stylesheet" href="css/animations.css" />
+  <link rel="stylesheet" href="css/perf-lite.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" media="print" crossorigin="anonymous" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" /></noscript>
 </head>
 <body>
   <div class="page-backdrop" aria-hidden="true">
@@ -24,24 +60,31 @@
   <div class="cursor-glow" aria-hidden="true"></div>
   <header class="site-header" id="top">
     <div class="container header-inner">
-      <a href="#top" class="brand">
-        <span class="brand-mark" aria-hidden="true">MJ</span>
+      <a href="mailto:jemshith.m@gmail.com" class="brand" aria-label="Email Mohamed Jemshith">
+        <span class="brand-mark">
+          <img class="protected-profile-img" src="img/profile.jpg" alt="" width="44" height="44" decoding="async" loading="eager" draggable="false" />
+        </span>
         <span class="brand-email">Mohamed Jemshith</span>
       </a>
-      <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false">
-        <i class="fa-solid fa-bars"></i>
-      </button>
-      <nav class="nav" aria-label="Primary">
-        <ul class="nav-list">
-          <li><a href="#services">Services</a></li>
-          <li><a href="#github">GitHub</a></li>
-          <li><a href="#works">Works</a></li>
-          <li><a href="#resume">Resume</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
-        <a href="https://github.com/jemshithjemc" class="btn btn-primary btn-nav btn-shine magnetic" target="_blank" rel="noopener noreferrer">GitHub</a>
-      </nav>
+      <div class="header-controls">
+        <button type="button" class="theme-toggle" aria-label="Switch to light mode" title="Dark mode">
+          <i class="fa-solid fa-moon" aria-hidden="true"></i>
+        </button>
+        <button type="button" class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+        <nav class="nav" aria-label="Primary">
+          <ul class="nav-list">
+            <li><a href="#services">Services</a></li>
+            <li><a href="#github">GitHub</a></li>
+            <li><a href="#works">Works</a></li>
+            <li><a href="#resume">Resume</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+          </ul>
+          <a href="https://github.com/jemshithjemc" class="btn btn-primary btn-nav btn-shine magnetic" target="_blank" rel="noopener noreferrer">GitHub</a>
+        </nav>
+      </div>
     </div>
   </header>
 
@@ -50,16 +93,16 @@
       <div class="hero-aurora" aria-hidden="true"></div>
       <div class="container hero-grid">
         <div class="hero-copy">
-          <p class="eyebrow"><span class="eyebrow-dot"></span> Mohamed Jemshith · Dubai, UAE · he/him · <strong class="accent">Full stack developer</strong></p>
+          <p class="eyebrow"><span class="eyebrow-dot"></span> Mohamed Jemshith · Dubai, UAE · he/him · <strong class="accent">Head of Development at Logz</strong></p>
           <h1 class="hero-title">
-            <span class="hero-title-line">Software Developer</span>
+            <span class="hero-title-line">Head of Development</span>
             <span class="hero-title-line hero-title-accent">
               <span class="text-gradient-shift">+</span>
               <span class="text-gradient-shift">Full-Stack &amp; Fintech</span>
             </span>
           </h1>
           <p class="hero-lead">
-            Hi — I’m <strong>@jemshithjemc</strong> on GitHub. I’m especially interested in <strong>Python</strong>, and I’m actively building with <strong>Node.js</strong>. By day: fintech automation, CRM, trading bots, EAs, React, WebSockets, and FastAPI. Reach me on Instagram <strong>@jemshith_jemc</strong> or via the links below.
+            <strong>Head of Development at Logz</strong> — leading engineering delivery in Dubai. On GitHub I’m <strong>@jemshithjemc</strong>, focused on <strong>Python</strong> and shipping with <strong>Node.js</strong>. Hands-on with fintech automation, CRM, trading tooling, EAs, React, WebSockets, and FastAPI. Reach me on Instagram <strong>@jemshith_jemc</strong> or via the links below.
           </p>
           <div class="hero-actions">
             <a href="https://github.com/jemshithjemc" class="btn btn-primary btn-shine magnetic" target="_blank" rel="noopener noreferrer">View GitHub</a>
@@ -73,11 +116,15 @@
         <div class="hero-visual">
           <div class="hero-photo-wrap">
             <img
+              class="protected-profile-img"
               src="img/profile.jpg"
               alt="Mohamed Jemshith — portrait"
               width="560"
               height="640"
               loading="eager"
+              fetchpriority="high"
+              decoding="async"
+              draggable="false"
             />
           </div>
         </div>
@@ -109,37 +156,33 @@
           <p class="section-sub">Full-stack engineering for fintech and automation—from trading infrastructure to CRM—focused on performance, clarity, and maintainability.</p>
         </header>
         <ul class="service-list">
-          <li class="service-item is-active" data-index="0">
+          <li class="service-item">
             <span class="service-num">01</span>
             <div class="service-body">
               <h3>Fintech &amp; Trading Automation</h3>
               <p>Trading bots, expert advisors (EAs), MT4/MT5 tooling, pricing, and automation that ships to production.</p>
             </div>
-            <span class="service-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
           </li>
-          <li class="service-item" data-index="1">
+          <li class="service-item">
             <span class="service-num">02</span>
             <div class="service-body">
               <h3>Full-Stack Web Apps</h3>
               <p>React, Node.js, Laravel, Django, and Express — APIs, portals, and dashboards.</p>
             </div>
-            <span class="service-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
           </li>
-          <li class="service-item" data-index="2">
+          <li class="service-item">
             <span class="service-num">03</span>
             <div class="service-body">
               <h3>Real-Time Data &amp; WebSockets</h3>
               <p>Socket.io, FastAPI, and streaming pipelines for live pricing and ops tools.</p>
             </div>
-            <span class="service-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
           </li>
-          <li class="service-item" data-index="3">
+          <li class="service-item">
             <span class="service-num">04</span>
             <div class="service-body">
               <h3>CRM, Compliance &amp; Integrations</h3>
               <p>Client portals, sign-up flows with SCA, compliance alerts, and internal services.</p>
             </div>
-            <span class="service-arrow" aria-hidden="true"><i class="fa-solid fa-arrow-up-right"></i></span>
           </li>
         </ul>
       </div>
@@ -167,7 +210,7 @@
             </div>
           </div>
           <figure class="github-figure">
-            <img src="img/github-contributions.png" alt="GitHub contribution activity overview for jemshithjemc" width="800" height="420" loading="lazy" />
+            <img src="img/github-contributions.png" alt="GitHub contribution activity overview for jemshithjemc" width="1536" height="1024" loading="lazy" decoding="async" fetchpriority="low" />
             <figcaption>Contribution activity (GitHub)</figcaption>
           </figure>
         </div>
@@ -271,33 +314,54 @@
     </section>
 
     <section class="section" id="resume">
-      <div class="container two-col">
+      <div class="container">
+        <header class="section-head center">
+          <h2>Work &amp; Education</h2>
+        </header>
+        <div class="two-col">
         <div class="col">
-          <h2 class="col-title">Experience</h2>
+          <h3 class="col-title">Experience</h3>
           <ul class="timeline">
             <li class="timeline-item">
-              <span class="timeline-date">Jan 2023 – Present</span>
-              <h3 class="timeline-role">Software Developer</h3>
+              <span class="timeline-date">2026 – Present</span>
+              <h4 class="timeline-role">Head of Development</h4>
+              <p class="timeline-meta">Logz · Dubai, United Arab Emirates</p>
+              <p class="timeline-detail">Engineering leadership and delivery — owning development direction, execution, and scalable full-stack practices across the team.</p>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-date">Jan 2023 – 2025</span>
+              <h4 class="timeline-role">Software Developer</h4>
               <p class="timeline-meta">GODO · Dubai, United Arab Emirates · Financial services (fintech)</p>
               <p class="timeline-detail">Full-stack development: trading automation, EAs, CRM systems, Python, React, Node.js, WebSockets, and FastAPI. Engineering specialist focus on automation and scalable web products.</p>
             </li>
             <li class="timeline-item">
               <span class="timeline-date">2023 – Present</span>
-              <h3 class="timeline-role">Open source &amp; collaborations</h3>
+              <h4 class="timeline-role">Open source &amp; collaborations</h4>
               <p class="timeline-meta">GitHub · <a href="https://github.com/jemshithjemc" class="timeline-inline-link" target="_blank" rel="noopener noreferrer">@jemshithjemc</a></p>
               <p class="timeline-detail">76 public repositories; contributions across 55+ repos including <code class="timeline-code">godocm/ctrder</code>, <code class="timeline-code">godocm/backend-code</code>, <code class="timeline-code">devopslogzee/HRMS-Frontend</code>, and others. Commit-first workflow with sustained activity through 2026.</p>
             </li>
           </ul>
         </div>
         <div class="col">
-          <h2 class="col-title">Education</h2>
+          <h3 class="col-title">Education</h3>
           <ul class="timeline">
             <li class="timeline-item">
               <span class="timeline-date">2022 – 2024</span>
-              <h3 class="timeline-role">MBA — Business Management Marketing</h3>
+              <h4 class="timeline-role">MBA — Business Management Marketing</h4>
               <p class="timeline-meta">Bharathidasan University (BDU), Tiruchirappalli, India</p>
             </li>
+            <li class="timeline-item">
+              <span class="timeline-date">2021 – 2022</span>
+              <h4 class="timeline-role">Diploma in Python</h4>
+              <p class="timeline-meta">Python programming, libraries, and software project work</p>
+            </li>
+            <li class="timeline-item">
+              <span class="timeline-date">2017 – 2020</span>
+              <h4 class="timeline-role">Bachelor of Computer Science</h4>
+              <p class="timeline-meta">St. Joseph's College of Arts and Science · Cuddalore, India · Autonomous</p>
+            </li>
           </ul>
+        </div>
         </div>
       </div>
     </section>
@@ -311,32 +375,26 @@
         <div class="skills-row">
           <div class="skill-card">
             <div class="skill-icon react"><i class="fa-brands fa-python"></i></div>
-            <span class="skill-pct">—</span>
             <span class="skill-name">Python</span>
           </div>
           <div class="skill-card">
             <div class="skill-icon js"><i class="fa-brands fa-node-js"></i></div>
-            <span class="skill-pct">—</span>
             <span class="skill-name">Node.js</span>
           </div>
           <div class="skill-card">
             <div class="skill-icon react"><i class="fa-brands fa-react"></i></div>
-            <span class="skill-pct">—</span>
             <span class="skill-name">React</span>
           </div>
           <div class="skill-card">
             <div class="skill-icon js"><i class="fa-brands fa-js"></i></div>
-            <span class="skill-pct">—</span>
             <span class="skill-name">JavaScript</span>
           </div>
           <div class="skill-card">
             <div class="skill-icon wp"><i class="fa-brands fa-php"></i></div>
-            <span class="skill-pct">—</span>
             <span class="skill-name">PHP</span>
           </div>
           <div class="skill-card">
             <div class="skill-icon xd"><i class="fa-solid fa-bolt"></i></div>
-            <span class="skill-pct">—</span>
             <span class="skill-name">Real-time / APIs</span>
           </div>
         </div>
@@ -345,85 +403,48 @@
           <div class="tech-stack-group">
             <span class="tech-stack-label">Languages &amp; runtimes</span>
             <div class="tech-pills">
-              <span class="tech-pill">Python</span>
-              <span class="tech-pill">Node.js</span>
-              <span class="tech-pill">HTML5</span>
-              <span class="tech-pill">JavaScript</span>
-              <span class="tech-pill">PHP</span>
-              <span class="tech-pill">TypeScript</span>
+              <span class="tech-pill"><span class="tech-pill-text">Python</span><i class="tech-pill-icon fa-brands fa-python" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">Node.js</span><i class="tech-pill-icon fa-brands fa-node-js" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">HTML5</span><i class="tech-pill-icon fa-brands fa-html5" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">JavaScript</span><i class="tech-pill-icon fa-brands fa-js" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">PHP</span><i class="tech-pill-icon fa-brands fa-php" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">TypeScript</span><i class="tech-pill-icon fa-brands fa-square-js" aria-hidden="true"></i></span>
             </div>
           </div>
           <div class="tech-stack-group">
             <span class="tech-stack-label">Frameworks &amp; libraries</span>
             <div class="tech-pills">
-              <span class="tech-pill">Chart.js</span>
-              <span class="tech-pill">Django</span>
-              <span class="tech-pill">FastAPI</span>
-              <span class="tech-pill">Express.js</span>
-              <span class="tech-pill">Laravel</span>
-              <span class="tech-pill">React</span>
-              <span class="tech-pill">Socket.io</span>
+              <span class="tech-pill"><span class="tech-pill-text">Chart.js</span><i class="tech-pill-icon fa-solid fa-chart-line" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">Django</span><i class="tech-pill-icon fa-brands fa-python" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">FastAPI</span><i class="tech-pill-icon fa-solid fa-bolt" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">Express.js</span><i class="tech-pill-icon fa-brands fa-node-js" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">Laravel</span><i class="tech-pill-icon fa-brands fa-laravel" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">React</span><i class="tech-pill-icon fa-brands fa-react" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">Socket.io</span><i class="tech-pill-icon fa-solid fa-plug" aria-hidden="true"></i></span>
             </div>
           </div>
           <div class="tech-stack-group">
             <span class="tech-stack-label">Tools &amp; platforms</span>
             <div class="tech-pills">
-              <span class="tech-pill">AWS</span>
-              <span class="tech-pill">Windows Terminal</span>
-              <span class="tech-pill">Apache</span>
-              <span class="tech-pill">Nginx</span>
-              <span class="tech-pill">Jenkins</span>
-              <span class="tech-pill">Microsoft SQL Server</span>
-              <span class="tech-pill">MySQL</span>
-              <span class="tech-pill">Figma</span>
-              <span class="tech-pill">GitHub</span>
-              <span class="tech-pill">GitLab</span>
-              <span class="tech-pill">Git</span>
-              <span class="tech-pill">Jira</span>
-              <span class="tech-pill">Meta</span>
-              <span class="tech-pill">Power BI</span>
-              <span class="tech-pill">Postman</span>
-              <span class="tech-pill">EA</span>
-              <span class="tech-pill">Swagger</span>
+              <span class="tech-pill"><span class="tech-pill-text">AWS</span><i class="tech-pill-icon fa-brands fa-aws" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">Windows Terminal</span><i class="tech-pill-icon fa-solid fa-terminal" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">Apache</span><i class="tech-pill-icon fa-solid fa-server" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">Nginx</span><i class="tech-pill-icon fa-solid fa-network-wired" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">Jenkins</span><i class="tech-pill-icon fa-brands fa-jenkins" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">Microsoft SQL Server</span><i class="tech-pill-icon fa-solid fa-database" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">MySQL</span><i class="tech-pill-icon fa-solid fa-database" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">Figma</span><i class="tech-pill-icon fa-brands fa-figma" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">GitHub</span><i class="tech-pill-icon fa-brands fa-github" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">GitLab</span><i class="tech-pill-icon fa-brands fa-gitlab" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">Git</span><i class="tech-pill-icon fa-brands fa-git-alt" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">Jira</span><i class="tech-pill-icon fa-brands fa-jira" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">Meta</span><i class="tech-pill-icon fa-brands fa-meta" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">Power BI</span><i class="tech-pill-icon fa-solid fa-chart-pie" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">Postman</span><i class="tech-pill-icon fa-solid fa-box-open" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">EA</span><i class="tech-pill-icon fa-solid fa-arrow-trend-up" aria-hidden="true"></i></span>
+              <span class="tech-pill"><span class="tech-pill-text">Swagger</span><i class="tech-pill-icon fa-solid fa-file-code" aria-hidden="true"></i></span>
             </div>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section section-tight" id="blog">
-      <div class="container">
-        <header class="section-head center">
-          <h2>Notes &amp; Ideas</h2>
-        </header>
-        <div class="blog-grid">
-          <article class="blog-card">
-            <a href="#" class="blog-thumb" aria-label="Read article: Python and trading automation">
-              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=800&h=520&fit=crop" alt="" loading="lazy" />
-            </a>
-            <div class="blog-body">
-              <span class="blog-tag">Python</span>
-              <h3><a href="#">Lessons from shipping MT4/MT5 and pricing tools</a></h3>
-            </div>
-          </article>
-          <article class="blog-card">
-            <a href="#" class="blog-thumb" aria-label="Read article: Node.js and full-stack patterns">
-              <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=520&fit=crop" alt="" loading="lazy" />
-            </a>
-            <div class="blog-body">
-              <span class="blog-tag">Node.js</span>
-              <h3><a href="#">What I’m learning while doubling down on Node.js</a></h3>
-            </div>
-          </article>
-          <article class="blog-card">
-            <a href="#" class="blog-thumb" aria-label="Read article: FastAPI and WebSockets">
-              <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=800&h=520&fit=crop" alt="" loading="lazy" />
-            </a>
-            <div class="blog-body">
-              <span class="blog-tag">APIs</span>
-              <h3><a href="#">FastAPI, Swagger, and real-time APIs</a></h3>
-            </div>
-          </article>
         </div>
       </div>
     </section>
@@ -432,36 +453,51 @@
       <div class="container">
         <div class="contact-grid">
           <div class="contact-aside">
-            <ul class="contact-list">
-              <li>
-                <span class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></span>
-                <div>
-                  <span class="contact-label">LinkedIn</span>
-                  <a href="https://www.linkedin.com/in/mohamed-jemshith-bb9b03339/" target="_blank" rel="noopener noreferrer">mohamed-jemshith-bb9b03339</a>
-                </div>
-              </li>
-              <li>
-                <span class="contact-icon"><i class="fa-brands fa-github"></i></span>
-                <div>
-                  <span class="contact-label">GitHub</span>
-                  <a href="https://github.com/jemshithjemc" target="_blank" rel="noopener noreferrer">jemshithjemc</a>
-                </div>
-              </li>
-              <li>
-                <span class="contact-icon"><i class="fa-brands fa-instagram"></i></span>
-                <div>
-                  <span class="contact-label">Instagram</span>
-                  <a href="https://www.instagram.com/jemshith_jemc/" target="_blank" rel="noopener noreferrer">@jemshith_jemc</a>
-                </div>
-              </li>
-              <li>
-                <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
-                <div>
-                  <span class="contact-label">Location</span>
-                  <span>Dubai, United Arab Emirates</span>
-                </div>
-              </li>
-            </ul>
+            <div class="contact-cards">
+              <div class="contact-panel">
+                <ul class="contact-list">
+                  <li>
+                    <span class="contact-icon"><i class="fa-solid fa-envelope"></i></span>
+                    <div>
+                      <span class="contact-label">Email</span>
+                      <a href="mailto:jemshith.m@gmail.com">jemshith.m@gmail.com</a>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></span>
+                    <div>
+                      <span class="contact-label">LinkedIn</span>
+                      <a href="https://www.linkedin.com/in/mohamed-jemshith-bb9b03339/" target="_blank" rel="noopener noreferrer">mohamed-jemshith-bb9b03339</a>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="contact-icon"><i class="fa-brands fa-github"></i></span>
+                    <div>
+                      <span class="contact-label">GitHub</span>
+                      <a href="https://github.com/jemshithjemc" target="_blank" rel="noopener noreferrer">jemshithjemc</a>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="contact-panel">
+                <ul class="contact-list">
+                  <li>
+                    <span class="contact-icon"><i class="fa-brands fa-instagram"></i></span>
+                    <div>
+                      <span class="contact-label">Instagram</span>
+                      <a href="https://www.instagram.com/jemshith_jemc/" target="_blank" rel="noopener noreferrer">@jemshith_jemc</a>
+                    </div>
+                  </li>
+                  <li>
+                    <span class="contact-icon"><i class="fa-solid fa-location-dot"></i></span>
+                    <div>
+                      <span class="contact-label">Location</span>
+                      <span class="contact-value">Dubai, United Arab Emirates</span>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -470,8 +506,10 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <a href="#top" class="brand brand-footer">
-        <span class="brand-mark" aria-hidden="true">MJ</span>
+      <a href="#top" class="brand brand-footer" aria-label="Mohamed Jemshith — Home">
+        <span class="brand-mark">
+          <img class="protected-profile-img" src="img/profile.jpg" alt="" width="44" height="44" decoding="async" loading="lazy" draggable="false" />
+        </span>
         <span class="brand-email">Mohamed Jemshith</span>
       </a>
       <nav class="footer-nav" aria-label="Footer">
@@ -482,7 +520,9 @@
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
       </nav>
-      <p class="copyright">© 2026 Mohamed Jemshith · <a href="https://github.com/jemshithjemc" class="footer-github-link" target="_blank" rel="noopener noreferrer">@jemshithjemc</a></p>
+      <p class="copyright">
+        <small>Copyright © <time datetime="2026">2026</time> Mohamed Jemshith · <a href="https://github.com/jemshithjemc" class="footer-github-link" target="_blank" rel="noopener noreferrer">@jemshithjemc</a></small>
+      </p>
     </div>
   </footer>
 

@@ -3,7 +3,7 @@
 :root {
   --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
-  --reveal-duration: 1.05s;
+  --reveal-duration: 0.68s;
 }
 
 @keyframes backdrop-drift {
@@ -29,7 +29,7 @@
 }
 
 body.is-loaded .scroll-progress-bar {
-  animation: scroll-shimmer 3.5s ease-in-out infinite;
+  animation: scroll-shimmer 2.8s ease-in-out infinite;
 }
 
 /* --- Page load: header + hero cascade --- */
@@ -41,62 +41,62 @@ body:not(.is-loaded) .site-header {
 body.is-loaded .site-header {
   transform: translateY(0);
   opacity: 1;
-  box-shadow: 0 0 0 1px rgba(135, 80, 247, 0.08);
+  box-shadow: 0 0 0 1px var(--site-header-load-ring);
 }
 
 body:not(.is-loaded) .hero-copy > *,
 body:not(.is-loaded) .hero-visual,
 body:not(.is-loaded) .stats-row .stat {
   opacity: 0;
-  transform: translateY(32px);
-  filter: blur(12px);
+  transform: translateY(24px);
+  filter: blur(8px);
 }
 
 body.is-loaded .hero-copy > * {
-  animation: hero-rise 1s var(--ease-out-expo) forwards;
+  animation: hero-rise 0.62s var(--ease-out-expo) forwards;
 }
 
 body.is-loaded .hero-copy > *:nth-child(1) {
-  animation-delay: 0.12s;
+  animation-delay: 0.06s;
 }
 
 body.is-loaded .hero-copy > *:nth-child(2) {
-  animation-delay: 0.22s;
+  animation-delay: 0.12s;
 }
 
 body.is-loaded .hero-copy > *:nth-child(3) {
-  animation-delay: 0.32s;
+  animation-delay: 0.18s;
 }
 
 body.is-loaded .hero-copy > *:nth-child(4) {
-  animation-delay: 0.42s;
+  animation-delay: 0.24s;
 }
 
 body.is-loaded .hero-visual {
-  animation: hero-photo-in 1.15s var(--ease-out-expo) 0.18s forwards;
+  animation: hero-photo-in 0.72s var(--ease-out-expo) 0.1s forwards;
 }
 
 body.is-loaded .stats-row .stat:nth-child(1) {
-  animation: hero-rise 0.85s var(--ease-out-expo) 0.55s forwards;
+  animation: hero-rise 0.58s var(--ease-out-expo) 0.35s forwards;
 }
 
 body.is-loaded .stats-row .stat:nth-child(2) {
-  animation: hero-rise 0.85s var(--ease-out-expo) 0.65s forwards;
+  animation: hero-rise 0.58s var(--ease-out-expo) 0.42s forwards;
 }
 
 body.is-loaded .stats-row .stat:nth-child(3) {
-  animation: hero-rise 0.85s var(--ease-out-expo) 0.75s forwards;
+  animation: hero-rise 0.58s var(--ease-out-expo) 0.49s forwards;
 }
 
 body.is-loaded .stats-row .stat:nth-child(4) {
-  animation: hero-rise 0.85s var(--ease-out-expo) 0.85s forwards;
+  animation: hero-rise 0.58s var(--ease-out-expo) 0.56s forwards;
 }
 
 @keyframes hero-rise {
   from {
     opacity: 0;
-    transform: translateY(28px);
-    filter: blur(8px);
+    transform: translateY(20px);
+    filter: blur(6px);
   }
   to {
     opacity: 1;
@@ -108,8 +108,8 @@ body.is-loaded .stats-row .stat:nth-child(4) {
 @keyframes hero-photo-in {
   from {
     opacity: 0;
-    transform: translateY(32px) scale(0.94) rotate(-1deg);
-    filter: blur(10px);
+    transform: translateY(24px) scale(0.96) rotate(-1deg);
+    filter: blur(8px);
   }
   to {
     opacity: 1;
@@ -365,29 +365,6 @@ body.is-loaded .hero-photo-wrap {
   }
 }
 
-/* Service row: active pulse ring */
-.service-item.is-active {
-  animation: active-glow 4s ease-in-out infinite;
-}
-
-@keyframes active-glow {
-  0%,
-  100% {
-    box-shadow: 0 10px 36px rgba(143, 95, 248, 0.22);
-  }
-  50% {
-    box-shadow: 0 14px 44px rgba(143, 95, 248, 0.32);
-  }
-}
-
-.service-item .service-arrow {
-  transition: transform 0.35s var(--ease-out-expo), background 0.25s ease;
-}
-
-.service-item:hover .service-arrow {
-  transform: translate(3px, -3px) rotate(12deg);
-}
-
 /* Skill icon orbit glow */
 .skill-icon {
   transition: transform 0.45s var(--ease-out-expo), box-shadow 0.35s ease;
@@ -414,29 +391,6 @@ body.is-loaded .hero-photo-wrap {
   }
 }
 
-/* Blog tag shimmer */
-.blog-tag {
-  position: relative;
-  overflow: hidden;
-}
-
-.blog-card:hover .blog-tag::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  animation: tag-shine 0.9s ease forwards;
-}
-
-@keyframes tag-shine {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(100%);
-  }
-}
-
 /* Work grid filter transition */
 .work-card.is-hiding,
 .repo-card.is-hiding {
@@ -448,7 +402,7 @@ body.is-loaded .hero-photo-wrap {
 
 .work-card.is-entering,
 .repo-card.is-entering {
-  animation: work-enter 0.55s var(--ease-out-expo) forwards;
+  animation: work-enter 0.4s var(--ease-out-expo) forwards;
 }
 
 @keyframes work-enter {

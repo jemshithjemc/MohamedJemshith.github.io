@@ -1,0 +1,97 @@
+/* Fast path for phones / touch — fewer paints, no blur filters, minimal motion */
+:root.perf-lite {
+  --reveal-duration: 0.45s;
+}
+
+html.perf-lite {
+  scroll-behavior: auto;
+}
+
+html.perf-lite .scroll-progress {
+  display: none;
+}
+
+/* Skip expensive load sequence (blur + stagger) — JS still toggles .is-loaded */
+html.perf-lite body:not(.is-loaded) .site-header,
+html.perf-lite body:not(.is-loaded) .hero-copy > *,
+html.perf-lite body:not(.is-loaded) .hero-visual,
+html.perf-lite body:not(.is-loaded) .stats-row .stat {
+  opacity: 1 !important;
+  transform: none !important;
+  filter: none !important;
+}
+
+html.perf-lite body.is-loaded .hero-copy > *,
+html.perf-lite body.is-loaded .hero-visual,
+html.perf-lite body.is-loaded .stats-row .stat {
+  animation: none !important;
+}
+
+html.perf-lite .site-header {
+  -webkit-backdrop-filter: blur(10px) saturate(1.05);
+  backdrop-filter: blur(10px) saturate(1.05);
+}
+
+html.perf-lite .hero-photo-wrap::before {
+  display: none;
+}
+
+html.perf-lite .page-backdrop-glow {
+  animation: none !important;
+  opacity: 0.22;
+}
+
+html.perf-lite .page-backdrop-grid {
+  opacity: 0.45;
+}
+
+html.perf-lite .hero-aurora::before,
+html.perf-lite .hero-aurora::after {
+  animation: none !important;
+}
+
+html.perf-lite body.is-loaded .scroll-progress-bar {
+  animation: none !important;
+  background-size: 100% 100%;
+}
+
+html.perf-lite .text-gradient-shift {
+  animation: none !important;
+  background-position: 0 50%;
+}
+
+html.perf-lite body.is-loaded .hero-photo-wrap {
+  animation: none !important;
+}
+
+html.perf-lite .eyebrow-dot {
+  animation: none !important;
+}
+
+html.perf-lite .reveal {
+  filter: none !important;
+  will-change: opacity, transform;
+  transition-duration: 0.42s;
+}
+
+html.perf-lite .work-card.is-hiding,
+html.perf-lite .repo-card.is-hiding {
+  filter: none !important;
+}
+
+html.perf-lite .work-card.is-entering,
+html.perf-lite .repo-card.is-entering {
+  animation: work-enter-lite 0.35s var(--ease-out-expo) forwards;
+}
+
+@keyframes work-enter-lite {
+  from {
+    opacity: 0;
+    transform: scale(0.98) translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
