@@ -22,9 +22,11 @@
     (function () {
       try {
         var mq = window.matchMedia.bind(window);
+        /* Match mobile nav breakpoint (1023px) so narrow viewports always get the fast path — including DevTools device mode with a fine pointer. */
         var lite =
-          mq("(max-width: 900px)").matches ||
+          mq("(max-width: 1023px)").matches ||
           mq("(pointer: coarse)").matches ||
+          mq("(hover: none)").matches ||
           (typeof navigator !== "undefined" &&
             navigator.connection &&
             navigator.connection.saveData === true);

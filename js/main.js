@@ -145,7 +145,8 @@
 
   document.querySelectorAll(revealSelector).forEach((el) => el.classList.add("reveal"));
 
-  const revealStep = perfLite ? 0.022 : 0.036;
+  /* No stagger on perf-lite — avoids long sequential reveals on small screens */
+  const revealStep = perfLite ? 0 : 0.036;
   document.querySelectorAll("main section.section, footer.site-footer").forEach((scope) => {
     scope.querySelectorAll(".reveal").forEach((el, i) => {
       el.style.setProperty("--reveal-delay", `${Math.min(i, 12) * revealStep}s`);
@@ -163,7 +164,7 @@
         });
       },
       perfLite
-        ? { threshold: 0.06, rootMargin: "0px 0px 12% 0px" }
+        ? { threshold: 0.01, rootMargin: "0px 0px 18% 0px" }
         : { threshold: 0.1, rootMargin: "0px 0px -6% 0px" }
     );
     document.querySelectorAll(".reveal").forEach((el) => revealIo.observe(el));
