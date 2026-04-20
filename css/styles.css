@@ -451,9 +451,9 @@ main section.section:not(#hero) {
 @media (max-width: 1023px) {
   .nav {
     z-index: 101;
-    background: color-mix(in srgb, var(--bg) 72%, transparent);
-    -webkit-backdrop-filter: blur(calc(22px * 0.3)) saturate(1.35);
-    backdrop-filter: blur(calc(22px * 0.3)) saturate(1.35);
+    background: color-mix(in srgb, var(--bg) 62%, transparent);
+    -webkit-backdrop-filter: blur(18px) saturate(1.4);
+    backdrop-filter: blur(18px) saturate(1.4);
     border-bottom: 1px solid color-mix(in srgb, var(--border) 85%, transparent);
     box-shadow:
       inset 0 1px 0 color-mix(in srgb, var(--text) 10%, transparent),
@@ -595,11 +595,28 @@ main section.section:not(#hero) {
   font-weight: 600;
   color: var(--text);
   margin: 0 0 0.75rem;
+  line-height: 1.35;
+  text-wrap: balance;
 }
 
 .eyebrow .accent {
   display: inline-block;
   padding: 0.2em 0.55em;
+}
+
+/* Keep hero eyebrow compact on phones (roughly two lines). */
+@media (max-width: 767px) {
+  .eyebrow {
+    max-width: 34ch;
+  }
+}
+
+/* Single line on large screens. */
+@media (min-width: 1024px) {
+  .eyebrow {
+    max-width: none;
+    white-space: nowrap;
+  }
 }
 
 .hero-title {

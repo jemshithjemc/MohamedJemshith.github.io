@@ -1,6 +1,6 @@
 /* Fast path for phones / touch — fewer paints, no blur filters, minimal motion */
 :root.perf-lite {
-  --reveal-duration: 0.28s;
+  --reveal-duration: 0.45s;
 }
 
 html.perf-lite {
@@ -27,28 +27,9 @@ html.perf-lite body.is-loaded .stats-row .stat {
   animation: none !important;
 }
 
-/* Backdrop blur is very expensive on mobile GPUs — use solid header only */
 html.perf-lite .site-header {
-  -webkit-backdrop-filter: none;
-  backdrop-filter: none;
-  transition:
-    height 0.2s ease,
-    box-shadow 0.2s ease,
-    background 0.2s ease,
-    border-color 0.2s ease;
-}
-
-@media (max-width: 1023px) {
-  html.perf-lite .nav {
-    -webkit-backdrop-filter: none;
-    backdrop-filter: none;
-    background: var(--bg);
-    box-shadow: 0 12px 32px color-mix(in srgb, #000 28%, transparent);
-  }
-
-  html.perf-lite[data-theme="light"] .nav {
-    box-shadow: 0 12px 32px color-mix(in srgb, var(--accent) 8%, transparent);
-  }
+  -webkit-backdrop-filter: blur(10px) saturate(1.05);
+  backdrop-filter: blur(10px) saturate(1.05);
 }
 
 html.perf-lite .hero-photo-wrap::before {
@@ -57,21 +38,16 @@ html.perf-lite .hero-photo-wrap::before {
 
 html.perf-lite .page-backdrop-glow {
   animation: none !important;
-  opacity: 0.18;
-  filter: none !important;
+  opacity: 0.22;
 }
 
 html.perf-lite .page-backdrop-grid {
-  opacity: 0.32;
-  -webkit-mask-image: none;
-  mask-image: none;
+  opacity: 0.45;
 }
 
 html.perf-lite .hero-aurora::before,
 html.perf-lite .hero-aurora::after {
   animation: none !important;
-  filter: none !important;
-  opacity: 0.35;
 }
 
 html.perf-lite body.is-loaded .scroll-progress-bar {
@@ -94,24 +70,8 @@ html.perf-lite .eyebrow-dot {
 
 html.perf-lite .reveal {
   filter: none !important;
-  will-change: auto;
-  transform: translateY(12px) scale(0.992);
-  transition-duration: var(--reveal-duration);
-}
-
-html.perf-lite .section-head h2,
-html.perf-lite .testimonials-head h2,
-html.perf-lite .col-title {
-  transition-duration: 0.32s, 0.28s;
-}
-
-html.perf-lite .section-head.center h2::after,
-html.perf-lite .testimonials-head h2::after {
-  transition-duration: 0.4s;
-}
-
-html.perf-lite .col-title::after {
-  transition-duration: 0.35s;
+  will-change: opacity, transform;
+  transition-duration: 0.42s;
 }
 
 html.perf-lite .work-card.is-hiding,
@@ -121,7 +81,7 @@ html.perf-lite .repo-card.is-hiding {
 
 html.perf-lite .work-card.is-entering,
 html.perf-lite .repo-card.is-entering {
-  animation: work-enter-lite 0.22s var(--ease-out-expo) forwards;
+  animation: work-enter-lite 0.35s var(--ease-out-expo) forwards;
 }
 
 @keyframes work-enter-lite {

@@ -22,11 +22,9 @@
     (function () {
       try {
         var mq = window.matchMedia.bind(window);
-        /* Match mobile nav breakpoint (1023px) so narrow viewports always get the fast path — including DevTools device mode with a fine pointer. */
         var lite =
-          mq("(max-width: 1023px)").matches ||
+          mq("(max-width: 900px)").matches ||
           mq("(pointer: coarse)").matches ||
-          mq("(hover: none)").matches ||
           (typeof navigator !== "undefined" &&
             navigator.connection &&
             navigator.connection.saveData === true);
@@ -109,9 +107,10 @@
           <div class="hero-actions">
             <a href="https://github.com/jemshithjemc" class="btn btn-primary btn-shine magnetic" target="_blank" rel="noopener noreferrer">View GitHub</a>
             <ul class="social-row" aria-label="Social links">
-              <li><a href="https://www.linkedin.com/in/mohamed-jemshith-bb9b03339/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in"></i></a></li>
-              <li><a href="https://github.com/jemshithjemc" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a></li>
-              <li><a href="https://www.instagram.com/jemshith_jemc/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram"></i></a></li>
+              <li><a href="mailto:jemshith.m@gmail.com" aria-label="Email jemshith.m@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.linkedin.com/in/mohamed-jemshith-bb9b03339/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin-in" aria-hidden="true"></i></a></li>
+              <li><a href="https://github.com/jemshithjemc" aria-label="GitHub" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github" aria-hidden="true"></i></a></li>
+              <li><a href="https://www.instagram.com/jemshith_jemc/" aria-label="Instagram" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-instagram" aria-hidden="true"></i></a></li>
             </ul>
           </div>
         </div>
@@ -133,7 +132,7 @@
       </div>
       <div class="container stats-row" data-stats-animate>
         <div class="stat">
-          <span class="stat-num" data-value="4">0</span>
+          <span class="stat-num" data-value="6">0</span>
           <span class="stat-label">Years of Experience</span>
         </div>
         <div class="stat">
